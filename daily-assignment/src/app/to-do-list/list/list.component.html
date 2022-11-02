@@ -1,7 +1,7 @@
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li *ngFor="let singleTask of tasks; let i = index">
+    <p ngClass="{{ singleTask.check }}">{{ singleTask.name }}</p>
+    <button type="button" (click)="removeTask(i)">Remove</button>
+    <button type="button" (click)="checkTask(i)">Done</button>
+  </li>
 </ul>

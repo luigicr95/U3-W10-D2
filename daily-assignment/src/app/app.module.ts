@@ -8,6 +8,27 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InputFormComponent } from './to-do-list/input-form/input-form.component';
 import { ListComponent } from './to-do-list/list/list.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
+  {
+    path: 'todolist',
+    component: ToDoListComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -17,12 +38,10 @@ import { ListComponent } from './to-do-list/list/list.component';
     ToDoListComponent,
     NavbarComponent,
     InputFormComponent,
-    ListComponent
+    ListComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

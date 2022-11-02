@@ -1,0 +1,11 @@
+ul {
+  margin-top: 2rem;
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.check {
+  text-decoration: line-through;
+}
